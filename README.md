@@ -20,7 +20,7 @@ and selected filter weights. Secondly, geometrical acoustic simulation
 is performed to analyze the filter’s impact on the acoustic simulation
 result
 
-Implementation:
+The source of this implementation:
 https://doi.org/10.1016/j.isprsjprs.2021.01.006
 
 Models used:
