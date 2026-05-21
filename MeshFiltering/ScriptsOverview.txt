@@ -1,0 +1,12 @@
+1.The model mesh filtering goes by running the 'iteration.m' to iterate 'meshFiltering.m', which complete the progress of normals filtering and vertex update. (Detailed methods and ideas are included.)
+
+2. 'iteration_new.m' iterates 'meshFiltering_zip.m', which is the optimization of 'meshFiltering.m'. (Calculate one parameter and use it, re-define it and delete it in the end of loop. Then, it takes shorter time and require lower memory size. )
+
+3. The weights can be set in 'meshFiltering_zip.m'/'meshFiltering.m'. 
+
+4.'vert2obj.m' can directly convert the updated information into an obj file with specific name.
+
+
+
+
+
