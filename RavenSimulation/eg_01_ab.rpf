@@ -1,0 +1,173 @@
+# RavenPortal-Config = 
+# Project: RavenSketchUpExport = 
+
+#----------------------------------------------------------------------------------------------- = 
+[Global]
+ProjectName = eg_01_ab
+
+ProjectPath_Input = ..\RavenInput
+ProjectPath_Output = ..\RavenOutput
+ProjectPath_DirectivityDB = ..\RavenDatabase\DirectivityDatabase
+ProjectPath_MaterialDB = ..\RavenDatabase\MaterialDatabase
+ProjectPath_PortalDB = ..\RavenDatabase\PortalDatabase
+ProjectPath_SoundDB = ..\RavenDatabase\SoundDatabase
+ProjectPath_HRTFDB = ..\RavenDatabase\HRTF\ITA-Kunstkopf_HRIR_AP11_Pressure_Equalized_3x3_256.daff
+
+# ApplicationMode, currently only supported mode 1: GUI or RavenConsole to perform off-line simulations = 
+ApplicationMode = 1
+
+# AccelerationType = 
+# 0 (BSP) = 
+# 1 (Spatial Hashing) = 
+# 2 (Brute Force) = 
+AccelerationType = 0
+
+# SimulationType: if both types are 1, all simulations are performed = 
+simulationTypeIS = 1
+simulationTypeRT = 1
+
+# ImpulseResponses (if both 1, calulate both impulse responses) (generateRIR/BRIR) = 
+generateRIR = 1
+generateBRIR = 1
+
+# keep output files (for Matlab interface, typically IRs are delated after result gathering) = 
+keepOutputFiles = 0
+
+# export Filter ( 1 yes 0 no) = 
+exportFilter = 1
+
+# Log Energy Histograms ( 1 yes 0 no) = 
+exportHistogram = 1
+
+# log Performance = 
+logPerformance = 0
+
+# export wall hit log = 
+exportWallHitList = 0
+
+# export plane wave list = 
+exportPlaneWaveList = 0
+
+
+#----------------------------------------------------------------------------------------------- = 
+[Rooms]
+# file list of rooms = 
+Model = C:\Users\liy\Downloads\eg_01_ab.ac
+
+#Room Temperature [°C] = 
+#list of room temperature values, same order as file list of rooms = 
+Temperature = 21
+
+#Room Humidity [%] = 
+#list of room humidity values, same order as file list of rooms = 
+Humidity = 50
+
+#Room Pressure [Pa] = 
+#list of room humidity values, same order as file list of rooms = 
+Pressure = 101325
+
+#----------------------------------------------------------------------------------------------- = 
+[PrimarySources]
+
+#source names = 
+sourceNames = Source
+
+# source directivity = 
+sourceDirectivity = KH_O100_Oli_5x5_3rd_relativiert_auf_azi0_ele0.daff
+
+sourceSoundModes = 0
+sourceSoundTypes = 0
+
+# SOUND_MUTE = 0, SOUND_ACTIVE = 1
+sourceSoundStates = 
+
+sourceSoundLevel = 
+
+#sources positions = 
+sourcePositions = -10.000, -7.000, 10.000
+
+#viewVectors = 
+sourceViewVectors = 1.000,0.000,0.000
+
+#upVectors = 
+sourceUpVectors = 0.000,1.000,0.000
+#----------------------------------------------------------------------------------------------- = 
+[Receiver]
+
+#receiver names = 
+receiverNames = Receiver0, Receiver1
+
+#receiver rooms = 
+receiverRooms = 0
+
+receiverStates = 1, 1
+
+#positions (x,y,z) = 
+receiverPositions = 7.000, -7.000, 17.000,7.000,-10.000,  4.000
+
+#viewVectors (x,y,z) = 
+receiverViewVectors = -1.000, 0.000, 0.000,-1.000, 0.000, 0.000
+
+#upVectors (x,y,z) = 
+receiverUpVectors = 0.000,1.000,0.000,0.000,1.000,0.000
+
+#----------------------------------------------------------------------------------------------- = 
+[ImageSources]
+# IS Order = 
+ISOrder_PS = 1
+
+# Skip Image Sources in Shadow Zone ( 1 yes / 0 no) = 
+ISSkipImageSourcesPS = 1
+
+
+#----------------------------------------------------------------------------------------------- = 
+[RayTracing]
+# Number of Particles/Frequency Band = 
+numberOfParticles_DetectionSphere = 85000
+
+#Allowed loss of Energy/Particle [dB] = 
+energyLoss_DetectionSphere = 66
+
+# scatter model = 
+# define DIFFUSERAIN 0 = 
+# define HITORIENTED 1 = 
+scatterModel_DetectionSphere = 0
+
+# filterLength [ms] = 
+filterLength_DetectionSphere = 2800
+
+# [0, Interval A] Resolution [ms] = 
+timeResolution_DetectionSphere = 8
+
+# resolution azimuth = 
+resolutionAzimuth_DetectionSphere = 10
+
+# resolution elevation = 
+resolutionElevation_DetectionSphere = 10
+
+# Detection Sphere Radius [m] = 
+radius_DetectionSphere = 0.6
+
+# Use fix reflection pattern? = 
+(if set to 1, each simulation rerun uses identical random number sequences for (scattered) reflection paths = 
+in combination with "setFixPoissonSequence" (see below) this leads to identical simulation results) = 
+fixReflectionPattern = 0
+
+#----------------------------------------------------------------------------------------------- = 
+filterLength_Portal = 2800
+[Filter]
+
+#Sampling Frequency = 
+samplingFrequency = 44100
+
+# FilterResolution (THIRD_OCTAVE = 0    ; OCTAVE=1)
+filterResolution = 1
+
+# maximum reflection density in room impulse response = 
+maximumReflectionDensity = 15000
+
+# Set fix Possion Sequence (0 = off, 1= fixed Possion Sequence)
+setFixPoissonSequence = 0
+
+# set Poission Sequence Number (random number sequence to control insertion of impulses) = 
+poissonSequenceNumber = 667

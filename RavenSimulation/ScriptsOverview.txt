@@ -1,0 +1,13 @@
+1.'imageplot.m' visualizes the 3D model mesh.
+
+2.'RIRsSimulation.m' run the simulation and save the results in MAT-file.
+
+3.'eg_RIRscomparison.m' and 'sr_RIRscomparison.m' compare the simulation results of the models of Eurogress or Generic simple room.
+
+
+
+
+
+
+
+
